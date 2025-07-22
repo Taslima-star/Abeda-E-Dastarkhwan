@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abeda-e-Dastarkhwan</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <header class="header">
+      <img src="image/Abeda-e-Dastarkhwan.png" alt="Abeda-e-Dastarkhwan.png" style="width: 50px;">
+        <div class="logo">Abeda-e-Dastarkhwan <span>Food & Drinks</span></div>
+        <nav class="navbar">
+            <a href="Index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="Menu.html">Menu</a>
+            <a href="Online Order.html">Online Order</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- Reservation Section -->
+<div style="text-align: center; padding: 40px; background-color: #1a1a1a; color: #f5f5f5; font-family: Arial;">
+  <h2>Reservations</h2>
+  <input id="resDate" type="date" style="padding: 8px; margin: 5px;">
+  <input id="resTime" type="time" style="padding: 8px; margin: 5px;">
+  <select id="partySize" style="padding: 8px; margin: 5px;">
+    <option value="">Party Size</option>
+    <option value="2">2 People</option>
+    <option value="4">4 People</option>
+    <option value="6">6 People</option>
+    <option value="10+">10+ People</option>
+  </select>
+  <button onclick="bookParty()" style="padding: 10px 20px; background-color: #d94d1a; color: white; border: none; cursor: pointer;">Book Now</button>
+</div>
+<!-- Popup Box -->
+<div id="popup" style="display: none; position: fixed; top: 30%; left: 50%; transform: translate(-50%, -50%); background-color: #fff3e6; padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.4); z-index: 9999; font-family: Arial; color: #222; text-align: center;">
+  <h3>🎉 Booking Confirmed!</h3>
+  <p id="popupMsg" style="margin-top: 10px;"></p>
+  <button onclick="closePopup()" style="margin-top: 15px; padding: 8px 15px; background-color: #d94d1a; color: white; border: none; border-radius: 5px;">OK</button>
+</div>
+
+<script>
+  function bookParty() {
+    var date = document.getElementById("resDate").value;
+    var time = document.getElementById("resTime").value;
+    var size = document.getElementById("partySize").value;
+
+    if (date && time && size) {
+      // Simulated backend delay
+      setTimeout(() => {
+        document.getElementById("popupMsg").innerText =
+          "Your party of " + size + " is booked for " + date + " at " + time + ".";
+        document.getElementById("popup").style.display = "block";
+      }, 500); // 0.5 second delay
+    } else {
+       alert("⚠ Please select date, time, and party size.");
+    }
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("resDate").value = "";
+    document.getElementById("resTime").value = "";
+    document.getElementById("partySize").value = "";
+  }
+</script>
+
+    
+
+    <div class="hero-section">
+
+        <section class="welcome">
+            <h2>Welcome To Abeda-e-Dastarkhwan</h2>
+            <p>your destination for timeless flavors and heartfelt hospitality. Rooted in rich culinary traditions and
+                inspired by the
+                warmth of home-cooked meals, we bring you a dining experience that celebrates heritage, culture, and
+                unforgettable
+                taste.
+
+                Whether you’re here for a quick bite or a family feast, our menu is crafted to take you on a journey
+                through the
+                authentic flavors of South Asian cuisine — made with love, care, and the finest ingredients.
+
+                Come, take a seat at our dastarkhwan, and let every bite tell a story.
+
+            </p>
+            
+</div>
+    </section>
+
+
+    <section style="background-color: #fff7f0; padding: 40px 20px; text-align: center;">
+  <h2 style="color: #6b1a1a; font-size: 32px; margin-bottom: 40px;">👨‍🍳 Meet Our Chefs</h2>
+  <p style="color: #444; font-size: 16px; max-width: 700px; margin: 0 auto 30px auto; text-align: center;">
+  Our chefs bring authentic Hyderabadi flavors to life with every dish, blending tradition with love and expertise.
+</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+    
+    <!-- Chef 1 -->
+    <div style="width: 220px;">
+      <img src="https://namerse.com/wp-content/uploads/2024/05/Funny-Male-Chef-Names-1024x576.webp"
+        alt="Chef 1"
+        style="width: 100%; height: 220px; border-radius: 50%; object-fit: cover; border: 4px solid #6b1a1a;">
+      <h3 style="margin: 10px 0 5px; font-size: 20px; color: #333;">Chef Sk Sabir</h3>
+      <p style="font-size: 14px; color: #666;">Grill and tandoor expert.</p>
+    </div>
+
+    <!-- Chef 2 -->
+    <div style="width: 220px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrEU_DQmoBuc_-Klrr9rL06N56F0s38zCY2w&s"
+        alt="Chef 2"
+        style="width: 100%; height: 220px; border-radius: 50%; object-fit: cover; border: 4px solid #6b1a1a;">
+      <h3 style="margin: 10px 0 5px; font-size: 20px; color: #333;">Chef Taslima</h3>
+      <p style="font-size: 14px; color: #666;">Master of desserts & sweets.</p>
+    </div>
+
+    <!-- Chef 3 -->
+    <div style="width: 220px;">
+      <img src="https://cdn-blog.superprof.com/blog_in/wp-content/uploads/2018/03/20161219132635-sanjeev-kapoor-editedvvv.jpeg"
+        alt="Chef 3"
+        style="width: 100%; height: 220px; border-radius: 50%; object-fit: cover; border: 4px solid #6b1a1a;">
+      <h3 style="margin: 10px 0 5px; font-size: 20px; color: #333;">Chef Jahangir</h3>
+      <p style="font-size: 14px; color: #666;">Expert in Hyderabadi biryani & kababs.</p>
+    </div>
+
+    <!-- Chef 4 -->
+    <div style="width: 220px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQztAgLHvgXtyFNyhH8Vf9zEpQ7uypp7Ktn_A&s"
+        alt="Chef 4"
+        style="width: 100%; height: 220px; border-radius: 50%; object-fit: cover; border: 4px solid #6b1a1a;">
+      <h3 style="margin: 10px 0 5px; font-size: 20px; color: #333;">Chef Najim</h3>
+      <p style="font-size: 14px; color: #666;">Specialist in Mughlai curries.</p>
+    </div>
+
+  </div>
+</section>
+<footer style="background-color: #6b1a1a; color: white; padding: 30px 20px; text-align: center; font-family: Arial, sans-serif;">
+  <!-- Quick Links -->
+  <div style="margin-bottom: 15px;">
+    <a href="Index.html" style="color: white; text-decoration: none; margin: 0 10px;">Home</a>
+    <a href="menu.html" style="color: white; text-decoration: none; margin: 0 10px;">Menu</a>
+    <a href="about.html" style="color: white; text-decoration: none; margin: 0 10px;">About</a>
+    <a href="contact.html" style="color: white; text-decoration: none; margin: 0 10px;">Contact</a>
+  </div>
+
+  <!-- Bottom Line -->
+  <div style="font-size: 13px; border-top: 1px solid #ffd8a9; padding-top: 10px; margin-top: 15px;">
+    &copy; 2025 Abeda-e-Dastarkhwan. All rights reserved.
+  </div>
+</footer>
+
+
+            
+
+</body>
+
+</html>
